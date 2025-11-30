@@ -105,6 +105,9 @@ public class VentanaPrincipal extends JFrame
     public void agregarRestaurante( String nombre, int calificacion, int x, int y, boolean visitado )
     {
         // TODO completar agregarRestaurante
+    	Restaurante nuevoRest = new Restaurante(nombre, calificacion, x, y, visitado);
+    	mundo.agregarRestaurante(nuevoRest);
+    	actualizarRestaurantes();
     }
 
     /**

@@ -37,9 +37,18 @@ public class VentanaAgregarRestaurante extends JFrame
 
         // Agrega el panel donde va a estar el mapa
         // TODO completar
+        panelMapa = new PanelMapaAgregar();
 
         // Agrega en el sur un panel para los detalles del restaurante y para los botones
         // TODO completar
+        JPanel southThings = new JPanel( new BorderLayout());
+        panelDetalles = new PanelEditarRestaurante();
+        southThings.add(panelDetalles,BorderLayout.CENTER);
+        panelBotones = new PanelBotonesAgregar(this);
+        southThings.add(panelBotones,BorderLayout.SOUTH);
+        
+        add(panelMapa, BorderLayout.CENTER);
+        add(southThings, BorderLayout.SOUTH);
 
         // Termina de configurar la ventana
         pack( );

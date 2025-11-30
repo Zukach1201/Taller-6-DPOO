@@ -30,6 +30,7 @@ public class PanelEditarRestaurante extends JPanel
     {
         // Crea el campo para el nombre con una etiqueta al frente
         // TODO completar
+    	
 
         // Crea el selector para la calificación con una etiqueta al frente
         // TODO completar
