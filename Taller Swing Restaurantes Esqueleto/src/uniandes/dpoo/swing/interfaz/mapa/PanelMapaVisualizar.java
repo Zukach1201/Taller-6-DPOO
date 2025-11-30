@@ -2,6 +2,7 @@ package uniandes.dpoo.swing.interfaz.mapa;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.List;
@@ -28,6 +29,8 @@ public class PanelMapaVisualizar extends JPanel
 
     public PanelMapaVisualizar( )
     {
+    	setLayout(new BorderLayout());
+    	
         this.labMapa = new JLabel( new ImageIcon( "./imagenes/mapa.png" ) );
         labMapa.setBorder( new LineBorder( Color.DARK_GRAY ) );
         add( labMapa, BorderLayout.CENTER );
@@ -39,7 +42,14 @@ public class PanelMapaVisualizar extends JPanel
         super.paint( g );
         Graphics2D g2d = ( Graphics2D )g;
 
-     // TODO completar y hacer que se vean los nombres de todos los restaurantes en el mapa
+     // TODOC completar y hacer que se vean los nombres de todos los restaurantes en el mapa
+        for (Restaurante rest : restaurantes) {
+        	g2d.setColor(Color.RED);
+        	int x = rest.getX();
+        	int y = rest.getY();
+        	g2d.fillOval(x-3,y-3,6,6);
+        	g2d.drawString(rest.getNombre(),x+5,y+5);
+        }
     }
 
     /**
